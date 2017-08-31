@@ -27,8 +27,12 @@
         <li><a href="#">Link</a></li>
       </ul>
 
-      <button class="btn btn-danger navbar-btn pull-right" style="margin-left: 1em;">Log out</button>
-      <%= link_to "Log in", new_user_session_path, class: "btn btn-success navbar-btn pull-right", style: "margin-left: 1em;"%>
+      <% if current_user %>
+        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-danger navbar-btn pull-right", style: "margin-left: 1em;"%>
+      <% else %>
+        <%= link_to "Log in", new_user_session_path, class: "btn btn-success navbar-btn pull-right", style: "margin-left: 1em;"%>
+      <% end %>
+
       <button class="btn btn-default navbar-btn pull-right" >Options</button>
     </div>
   </nav>
