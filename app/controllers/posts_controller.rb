@@ -8,8 +8,12 @@ class PostsController < ApplicationController
   def index
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def create
-    @post = Post.new
+    @post = Post.new(permit_post)
     if @post.save
       flash[:success] = "Poxtô!"
       redirect_to post_path(@post)
@@ -19,6 +23,8 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-  end
+  private
+    def permit_post
+      params.require(:post).permit(:image, :description)
+    end
 end
