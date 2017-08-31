@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TreinamentoRails</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>TreinamentoRails</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <!-- <a class="navbar-brand" href="/">Extragam</a> -->
+        <a class="navbar-brand" href="/">
+          <ul style="margin: 0; vertical-align: text-top;">
+            <img src="/extragam.png" width="30" height="30" class="d-inline-block align-top" alt="" > Extagram
+          </ul>
+        </a>
+      </div>
+
+      <ul class="nav navbar-nav">
+        <li>
+          <%= link_to "New Post", new_post_path%>
+        </li>
+        <li><a href="#">Link</a></li>
+      </ul>
+
+      <button class="btn btn-danger navbar-btn pull-right" style="margin-left: 1em;">Log out</button>
+      <button class="btn btn-success navbar-btn pull-right" style="margin-left: 1em;">Log in</button>
+      <button class="btn btn-default navbar-btn pull-right" >Options</button>
+    </div>
+  </nav>
+
+  <br>
+  <br>
+
+  <%= yield %>
+</body>
 </html>
