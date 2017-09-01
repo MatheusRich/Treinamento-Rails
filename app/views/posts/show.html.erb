@@ -1,5 +1,8 @@
-<div class="white" style="text-align: center;">
-  <%= image_tag(@post.image.url(:medium))%>
-  <br>
-  <%= @post.description %>
+<div class="card" style="margin: 0 30%;text-align: center;max-width: 500px;">
+    <%= image_tag(@post.image.url(:medium))%>
+  <div class="card-body">
+    <h4 class="card-title">
+      <%= @post.description %>
+    </h4>
+  </div>
 </div>
