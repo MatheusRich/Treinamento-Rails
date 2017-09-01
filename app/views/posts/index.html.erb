@@ -1,2 +1,12 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% @posts.each do |post| %>
+  <div class="card" style="margin: 0 0 0 30%;text-align: center;max-width: 500px;">
+      <%= image_tag(post.image.url(:medium))%>
+    <div class="card-body">
+      <h4 class="card-title">
+        <%= post.description %>
+      </h4>
+    </div>
+  </div>
+
+  <br>
+<% end %>
